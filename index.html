@@ -4,56 +4,204 @@
   <meta charset="UTF-8">
   <title>Nirman Distributors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Modern font and Icon CDN -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
     html, body {
+      height: 100%;
       margin: 0; padding: 0;
-      background: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=700&q=80') no-repeat center center fixed;
-      background-size: cover;
+      background: #f3f5fa;
       font-family: 'Montserrat', Arial, sans-serif;
+      min-height: 100vh;
+      width: 100vw;
+      box-sizing: border-box;
     }
-    .overlay {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(43, 53, 79, 0.72);
+    body {
+      min-height: 100vh;
+      min-width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .center-wrap {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ellipse-bg {
+      position: absolute;
       z-index: 0;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 340px; height: 170px;
+      background: radial-gradient(ellipse at center, #e3f0fa 88%, #e7f4fa 100%);
+      filter: blur(2px);
+      border-radius: 50% 50% 34% 36%/60% 60% 40% 40%;
+      margin-top: -80px;
+      pointer-events: none;
     }
-    .container {
-      position: relative; z-index: 1;
-      max-width: 420px; margin: 47px auto 0 auto;
-      background: #fff; border-radius: 36px;
-      box-shadow: 0 16px 45px rgba(40, 60, 110, 0.18);
-      padding: 36px 24px 30px 24px; display: flex; flex-direction: column; align-items: center;
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 365px;
+      min-height: 610px;
+      background: #fff;
+      border-radius: 54px;
+      box-shadow: 0 20px 60px rgba(32,60,110,0.17);
+      padding: 38px 22px 28px 22px;
+      display: flex; flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      opacity: 0;
+      transform: scale(0.98) translateY(28px);
+      animation: fadeCard 0.92s cubic-bezier(.55,0,.43,1.1) forwards;
+      z-index: 2;
+      overflow: hidden;
     }
-    .title {
-      font-size: 2em; color: #2342b0; font-weight: bold; margin-top: 9px; opacity: 0.97;
-      letter-spacing: 0.04em;
+    @keyframes fadeCard {
+      to { opacity: 1; transform: none;}
     }
-    .owner { font-size: 1em; color: #fd9800; margin-bottom: 7px; font-weight: 500;}
+    .illustration {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 13px;
+      margin-top: 10px;
+    }
+    .illustration svg {
+      height: 42px; width: 42px;
+      display: block;
+      stroke: #2364ae;
+      fill: none;
+      opacity: 0.70;
+    }
+    .title { font-size: 1.6em; color: #2364ae; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 2px;}
+    .owner { font-size: 1em; color: #2364ae; font-weight: 500; margin-bottom: 3px; opacity: 0.77;}
+    .card-divider {
+      width: 38%; height: 1.5px; background: #e7ebf7; border-radius: 3px; margin: 14px auto 16px auto;
+    }
     .address {
-      font-size: 0.95em; color: #8cb0e7;
-      background: #eaf0fb;
-      border-radius: 12px; margin-bottom: 23px; margin-top: 6px; padding: 6px 8px;
+      font-size: 1em; color: #2364ae;
+      background: #ecf3fa;
+      border-radius: 15px; padding: 8px 13px; margin-bottom: 25px;
+      font-weight: 500; display: inline-block; opacity: 0.95;
     }
-    .main-cards {
-      display: flex; flex-direction: column; gap: 16px; width: 100%; margin-bottom: 13px;
-    }
+    .btn-group {width: 100%; display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px;}
     .main-btn {
-      background: #2342b0; color: #fff;
-      font-size: 1.17em; font-weight: 700;
-      padding: 16px 0; margin: 0; border: none; border-radius: 22px;
-      width: 100%; box-shadow: 0 2px 13px rgba(35,66,176,.10);
-      cursor: pointer; letter-spacing: 0.01em; text-decoration: none;
-      transition: background 0.18s, color 0.21s; display: block;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 1.08em;
+      border-radius: 24px;
+      border: none;
+      width: 100%;
+      padding: 15px 0;
+      box-shadow: 0 2px 9px rgba(32,102,227,0.07);
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      margin: 0;
+      transition: background 0.17s, color 0.19s, border 0.15s;
+      cursor: pointer;
+      outline: none;
+      display: block;
     }
-    .main-btn.email { background: #fff; color: #2342b0; border: 2px solid #2342b0;}
-    .main-btn.email:hover { background: #fd9800; color: #fff; border-color: #fd9800;}
-    .main-btn.whatsapp { background: #fd9800; color: #fff;}
-    .main-btn.whatsapp:hover { background: #2342b0; color: #fff;}
+    .main-btn.email {
+      background: #fff; color: #2364ae; border: 2px solid #2364ae;
+    }
+    .main-btn.email:hover, .main-btn.email:focus {
+      background: #2364ae; color: #fff; border-color: #2364ae;
+    }
+    .main-btn.whatsapp {
+      background: #2364ae; color: #fff; border: 2px solid #2364ae;
+    }
+    .main-btn.whatsapp:hover, .main-btn.whatsapp:focus {
+      background: #143a62; color: #fff; border-color: #143a62;
+    }
     .icon-row {
-      display: flex; gap: 40px; justify-content: center; margin: 30px 0 11px 0;
+      display: flex; gap: 35px; justify-content: center; margin: 38px 0 10px 0;
     }
-    .icon-card
+    .icon-card {
+      background: #f2f7fc;
+      border-radius: 50%;
+      width: 53px; height: 53px;
+      box-shadow: 0 2px 8px rgba(32,102,227,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5em; color: #2364ae;
+      cursor: pointer;
+      border: none;
+      transition: color 0.15s, background 0.14s, transform 0.12s;
+    }
+    .icon-card:hover, .icon-card:focus {
+      color: #143a62; background: #fff; transform: scale(1.11);}
+    .note {
+      color: #bbcbd8; margin-top: 22px; font-size: 0.98em; font-weight: 500;}
+    @media (max-width: 600px) {
+      .ellipse-bg { width: 80vw; height: 26vw; min-width: 220px; min-height: 80px;}
+      .card {
+        max-width: 98vw;
+        min-height: 94vw;
+        padding: 13px 3px 10px 3px;
+        border-radius: 32px;
+      }
+      .illustration svg {height: 30px; width: 30px;}
+      .title { font-size: 1.18em;}
+      .owner { font-size: 0.92em;}
+      .address { font-size: 0.81em;}
+      .main-btn {font-size: 0.96em; padding: 11px 0;}
+      .icon-card {width: 32px; height: 32px; font-size: 1em;}
+      .icon-row {gap: 24px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="center-wrap">
+    <div class="ellipse-bg"></div>
+    <div class="card">
+      <div class="illustration">
+        <!-- Warehouse / distributor simple SVG icon -->
+        <svg viewBox="0 0 40 40"><rect x="7" y="18" width="26" height="13" rx="2" stroke-width="1.7"/><path d="M7 18 L20 9 L33 18" stroke-width="2"/></svg>
+      </div>
+      <div class="title">Nirman Distributors</div>
+      <div class="owner">Owned by Tanishq Jain</div>
+      <div class="card-divider"></div>
+      <div class="address">
+        3-5-121/3/1/6/3, Prem Nivas, Street No. 7,<br>
+        Eden Garden, Ramkote, Hyderabad - 500001.
+      </div>
+      <div class="btn-group">
+        <a class="main-btn email"
+           href="mailto:nirmandistributors11@gmail.com,hello@nirmandistributors.com?subject=Modular%20Hardware%20Inquiry"
+           target="_blank">
+           Email Us
+        </a>
+        <a class="main-btn whatsapp"
+           href="https://wa.me/919133033002?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20modular%20hardware."
+           target="_blank">
+           Chat on WhatsApp
+        </a>
+      </div>
+      <div class="icon-row">
+        <a class="icon-card" href="tel:9133033002" title="Call">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <a class="icon-card" href="https://www.instagram.com/nirmandistributors" target="_blank" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a class="icon-card" href="https://share.google/IBThUi3nVTXz1Vj4Z" target="_blank" title="Location">
+          <i class="fa-solid fa-location-dot"></i>
+        </a>
+      </div>
+      <div class="note">
+        Scanning QR brings you here!<br>
+        Tap any icon to connect instantly.<br>
+        Need help? Search “Nirman Distributors Ramkote”
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
 
