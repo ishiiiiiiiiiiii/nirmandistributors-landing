@@ -2,224 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Nirman Distributors | All Socials & Contact</title>
+  <title>Nirman Distributors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="https://nirmandistributors.com/favicon.png">
+  <!-- Google Fonts for modern UI -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
-    :root {
-      --primary: #3730a3;
-      --accent: #faad3c;
-      --bg: #f6f8fc;
-      --card: #fff;
-      --gray: #7e88a1;
-    }
     body {
-      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-      margin: 0;
-      background: var(--bg); 
-      min-height: 100vh;
+      margin: 0; background: #f3f6fc;
+      font-family: 'Montserrat', Arial, sans-serif;
     }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.7s cubic-bezier(.86,.04,.47,.86) forwards;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+    .logo-anim {
+      font-size: 2.7em; color: #413995; font-weight: 700;
+      letter-spacing: 0.05em;
+      text-align: center; margin-top: 42px;
+      opacity: 0; transform: translateY(-36px) scale(0.95);
+      animation: logoSlide 1.3s cubic-bezier(.55,-0.09,.37,1.42) forwards;
+    }
+    @keyframes logoSlide { to { opacity: 1; transform: none; } }
     .container {
-      max-width: 420px;
-      margin: 60px auto 0 auto;
-      background: var(--card);
-      border-radius: 20px;
-      box-shadow: 0 10px 32px rgba(40, 40, 83, 0.13);
-      padding: 36px 26px 30px 26px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: drop-in 0.8s cubic-bezier(.24,.77,.58,1.41);
+      max-width: 370px; margin: 60px auto 0 auto;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 15px 54px rgba(60,70,130,0.10);
+      padding: 32px 18px 30px 18px;
+      display: flex; flex-direction: column; align-items: center;
     }
-    @keyframes drop-in {
-      0% {opacity: 0; transform: translateY(-40px);}
-      80% {opacity: 1; transform: translateY(8px);}
-      100% {opacity: 1; transform: translateY(0);}
+    .icon-row {
+      display: flex; justify-content: center;
+      gap: 35px; flex-wrap: wrap;
+      margin: 32px 0 25px 0;
     }
-    h1 {
-      color: var(--primary);
-      font-size: 2.1em;
-      font-weight: 900;
-      margin: 0 0 15px 0;
-      text-align: center;
-      letter-spacing: 0.3px;
-      animation: fade-in 1.4s;
+    .icon-card {
+      background: #f8faff; color: #413995;
+      border-radius: 50%; width: 72px; height: 72px;
+      box-shadow: 0 2px 13px rgba(70,60,83,0.11);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2em; cursor: pointer;
+      transition: box-shadow 0.18s, background 0.2s;
+      border: 2.5px solid #ecebff;
     }
-    @keyframes fade-in {
-      0% {opacity: 0;}
-      90% {opacity: 1;}
-      100% {opacity: 1;}
-    }
-    .owner {
-      font-size: 1.08em;
-      color: var(--gray);
-      margin-bottom: 15px;
-    }
-    .address {
-      font-size: 1em;
-      color: #636a81;
-      line-height: 1.6;
-      text-align: center;
-      margin-bottom: 21px;
-      background: #f5f1fd;
-      padding: 11px 13px;
-      border-radius: 10px;
-      animation: slide-in 1.2s;
-    }
-    @keyframes slide-in {
-      0% {opacity: 0; transform: translateX(-25px);}
-      80% {opacity: 1; transform: translateX(7px);}
-      100% {opacity: 1; transform: translateX(0);}
-    }
-    .social-list {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 20px 16px;
-      margin-bottom: 22px;
-      width: 100%;
-      animation: fade-in 1.9s;
-    }
-    .social-card {
-      padding: 16px;
-      background: #f7f8fc;
-      border-radius: 10px;
-      box-shadow: 0 3px 15px rgba(112,108,192,0.05);
-      text-align: center;
-      transition: box-shadow 0.2s;
-    }
-    .social-card:hover {
-      box-shadow: 0 3px 20px rgba(112,108,192,0.17);
-      background: #edeffa;
-    }
-    .social-card a {
-      text-decoration: none;
-      color: var(--primary);
+    .icon-card:hover { box-shadow: 0 2px 18px rgba(70,60,130,0.17); background: #e1e5fb; color: #1d2064;}
+    .main-btn {
+      background: #413995;
+      color: #fff;
+      padding: 15px 0;
+      width: 83%;
+      margin: 27px 0 6px 0;
+      font-size: 1.15em; border: none; border-radius: 99px;
+      font-weight: 700; box-shadow: 0 1px 18px rgba(80,70,170,0.10);
+      cursor: pointer; transition: background 0.2s, color 0.22s;
+      text-align: center; letter-spacing: 0.03em;
       display: block;
-      font-size: 1.08em;
-      margin-top: 8px;
-    }
-    .icon {
-      font-size: 2em;
-      margin-bottom: 8px;
-      color: var(--accent);
-      filter: drop-shadow(1px 1px 2px #eae4fa);
-      transition: color 0.2s;
-    }
-    .social-card:hover .icon {
-      color: var(--primary);
-    }
-    .cta {
-      width: 100%;
-      text-align: center;
-    }
-    .cta-btn {
-      display: inline-block;
-      width: 100%;
-      background: var(--primary);
-      color: #fff; font-size: 1.22em; font-weight: 600;
-      padding: 13px;
-      border-radius: 8px;
-      margin-top: 16px;
       text-decoration: none;
-      box-shadow: 0 2px 13px rgba(40, 40, 80, 0.07);
-      transition: background 0.22s;
-      letter-spacing: 0.01em;
-      border: none;
     }
-    .cta-btn:hover { background: var(--accent); color: var(--primary); }
-    .contact-info {
-      margin-top: 12px;
-      margin-bottom: 8px;
-      font-size: 1.04em;
-      text-align: left;
-      width: 100%;
+    .main-btn:hover { background: #faad3c; color: #413995;}
+    .addr {
+      font-size: 0.92em; color: #7e88a1;
+      padding: 6px 10px; border-radius: 10px;
+      background: #f5f1fd; text-align: center;
+      margin-top: 9px; margin-bottom: 3px;
     }
-    .contact-row {
-      margin-bottom: 8px;
-      word-break: break-all;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .contact-label {
-      color: #494e66;
-      font-weight: 500;
-    }
-    .contact-data {
-      color: var(--primary);
-      font-weight: 400;
-    }
-    .qr-note {
-      color: #7e88a1;
-      margin-top: 23px;
-      font-size: 0.95em;
-      text-align: center;
-      opacity: 0.85;
-    }
-    @media (max-width: 600px) {
-      .container { max-width: 97vw; padding: 19px 9px 18px 9px;}
-      h1 {font-size: 1.55em;}
-      .address {font-size: 0.92em;}
+    .note {
+      color: #7e88a1; margin-top: 16px;
+      font-size: 0.95em; text-align: center; opacity: 0.88;
     }
   </style>
-
-  <!-- Add Google Fonts or icon CDN if needed below -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
 </head>
 <body>
-  <div class="container">
-    <h1>Nirman Distributors</h1>
-    <div class="owner">Owned by Tanishq Jain</div>
-    <div class="address">
-      3-5-121/3/1/6/3, Prem Nivas, Street No. 7,<br>
-      Eden Garden, Ramkote, Hyderabad - 500001.
-    </div>
-    <div class="contact-info">
-      <div class="contact-row">
-        <span class="contact-label"><i class="fa-solid fa-phone"></i> Call:</span>
-        <span class="contact-data">91330 33002</span>
+  <div class="logo-anim">Nirman Distributors</div>
+  <div class="fade-in">
+    <div class="container">
+      <div class="addr">
+        3-5-121/3/1/6/3, Prem Nivas, Street No. 7,<br>
+        Eden Garden, Ramkote, Hyderabad - 500001.
       </div>
-      <div class="contact-row">
-        <span class="contact-label"><i class="fa-brands fa-whatsapp"></i> WhatsApp:</span>
-        <a class="contact-data" href="https://wa.me/919133033002?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20modular%20hardware." target="_blank">Direct Chat</a>
+      <div class="icon-row">
+        <a class="icon-card" href="tel:9133033002" title="Call">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <a class="icon-card" href="https://wa.me/919133033002?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20modular%20hardware." target="_blank" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a class="icon-card" href="mailto:nirmandistributors11@gmail.com" title="Email 1">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a class="icon-card" href="mailto:hello@nirmandistributors.com" title="Email 2">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+        <a class="icon-card" href="http://nirmandistributors.com/" target="_blank" title="Website">
+          <i class="fa-solid fa-globe"></i>
+        </a>
+        <a class="icon-card" href="https://www.instagram.com/nirmandistributors" target="_blank" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a class="icon-card" href="https://share.google.com/vp1097WronELRGEfH" target="_blank" title="Location">
+          <i class="fa-solid fa-location-dot"></i>
+        </a>
       </div>
-      <div class="contact-row">
-        <span class="contact-label"><i class="fa-regular fa-envelope"></i> Email:</span>
-        <a class="contact-data" href="mailto:nirmandistributors11@gmail.com">nirmandistributors11@gmail.com</a>, 
-        <a class="contact-data" href="mailto:hello@nirmandistributors.com">hello@nirmandistributors.com</a>
-      </div>
-      <div class="contact-row">
-        <span class="contact-label"><i class="fa-solid fa-globe"></i> Website:</span>
-        <a class="contact-data" href="http://nirmandistributors.com/" target="_blank">nirmandistributors.com</a>
-      </div>
-    </div>
-    <div class="social-list">
-      <div class="social-card">
-        <span class="icon"><i class="fa-brands fa-instagram"></i></span>
-        <a href="https://www.instagram.com/nirmandistributors" target="_blank">Instagram</a>
-      </div>
-      <div class="social-card">
-        <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
-        <a href="https://share.google.com/vp1097WronELRGEfH" target="_blank">Location (Google Maps)</a>
-      </div>
-      <div class="social-card">
-        <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-        <a href="mailto:nirmandistributors11@gmail.com">Email 1</a>
-      </div>
-      <div class="social-card">
-        <span class="icon"><i class="fa-regular fa-envelope"></i></span>
-        <a href="mailto:hello@nirmandistributors.com">Email 2</a>
-      </div>
-    </div>
-    <div class="cta">
-      <a class="cta-btn" href="https://wa.me/919133033002?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20modular%20hardware." target="_blank">
-        Chat on WhatsApp
+      <a class="main-btn"
+         href="https://wa.me/919133033002?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20modular%20hardware;"
+         target="_blank">
+         Chat on WhatsApp
       </a>
-    </div>
-    <div class="qr-note">
-      Scanning QR brings you here!<br>
-      All contact & socials above—tap to connect instantly.<br>
-      <span style="color: #7e88a1; font-size: 0.9em;">Need help? Search “Nirman Distributors Ramkote”</span>
+      <div class="note">
+        Scanning QR brings you here!<br>
+        Tap any icon to connect instantly.<br>
+        Need help? Search “Nirman Distributors Ramkote”
+      </div>
     </div>
   </div>
 </body>
